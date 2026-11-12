@@ -5,133 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paket Belajar | SmartQ</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <a href="index.html" class="brand">
-        <img src="New SmartQ.jpeg" alt="Logo SmartQ">
-        <span>SMART<span>Q</span></span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="index.html#tentang">Tentang Kami</a>
-        <a href="program.html">Program</a>
-        <a href="paket.html" class="active">Paket</a>
-        <a href="index.html#tim">Tim Kami</a>
-        <a href="index.html#testimoni">Testimoni</a>
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="brand">
+            <img src="New SmartQ.jpeg" alt="SmartQ">
+            <span>Smart<span>Q</span><small>Let's Learn And Grow Together</small></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#tentang">Tentang</a>
+            <a href="program.html">Program</a>
+            <a href="paket.html" class="active">Paket</a>
+            <a href="index.html#tim">Tim Kami</a>
+            <a href="index.html#kontak">Kontak</a>
+            <a href="#" class="nav-wa" data-wa><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+        </div>
     </nav>
-
-    <a href="index.html#pendaftaran" class="nav-button">Daftar Sekarang ↗</a>
 </header>
 
-<section class="detail-hero">
-    <span class="eyebrow">SMARTQ LEARNING PACKAGES</span>
-    <h1>Choose Your <span>Learning Plan.</span></h1>
-    <p>
-        Pilihan paket pembelajaran SmartQ untuk mendukung
-        kebutuhan belajar dan perkembangan kemampuan siswa.
-    </p>
+<section class="page-hero">
+    <div class="container">
+        <span class="eyebrow light">SMARTQ LEARNING PACKAGES</span>
+        <h1>Pilih Paket <span>Belajarmu.</span></h1>
+        <p>Temukan pilihan pembelajaran yang mendukung kebutuhan akademikmu.</p>
+        <div class="breadcrumb"><a href="index.html">Beranda</a> / Paket</div>
+    </div>
 </section>
 
-<main class="detail-content">
+<section class="section">
+    <div class="container">
+        <div class="center-heading">
+            <span class="eyebrow">LEARNING OPTIONS</span>
+            <h2>Pilihan Paket <span>SmartQ</span></h2>
+            <p>Setiap paket dirancang untuk mendukung perkembangan kemampuan belajar.</p>
+        </div>
 
-    <article class="detail-card" id="math">
-        <span class="eyebrow">PACKAGE 01</span>
-        <h2>Math Starter</h2>
+        <div class="package-grid">
 
-        <p>
-            Paket Math Starter merupakan pilihan pembelajaran
-            yang berfokus pada pendampingan Matematika.
-            Cocok bagi siswa yang ingin memperkuat pemahaman
-            konsep dan meningkatkan kemampuan berhitung.
-        </p>
+            <article class="package-card">
+                <div class="package-icon pink-icon"><i class="fas fa-calculator"></i></div>
+                <span class="package-label">SINGLE PROGRAM</span>
+                <h3>Math Starter</h3>
+                <p>Fokus mengembangkan kemampuan Matematika dan pemahaman konsep dasar.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Materi Matematika</li>
+                    <li><i class="fas fa-check"></i> Latihan soal</li>
+                    <li><i class="fas fa-check"></i> Pembahasan materi</li>
+                    <li><i class="fas fa-check"></i> Evaluasi belajar</li>
+                </ul>
+                <a href="matematika.html" class="btn btn-outline-dark">Detail Materi <i class="fas fa-arrow-right"></i></a>
+                <a href="#" data-wa class="package-contact">Tanya Biaya <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-        <ul>
-            <li>Bimbingan Matematika.</li>
-            <li>Pemahaman materi sekolah.</li>
-            <li>Latihan soal dan pembahasan.</li>
-            <li>Evaluasi kemampuan belajar.</li>
-        </ul>
+            <article class="package-card featured-package">
+                <span class="popular-label">PILIHAN UNGGULAN</span>
+                <div class="package-icon blue-icon"><i class="fas fa-star"></i></div>
+                <span class="package-label">COMBINATION PROGRAM</span>
+                <h3>Smart Duo</h3>
+                <p>Kombinasi pembelajaran Matematika dan Bahasa Inggris.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Materi Matematika</li>
+                    <li><i class="fas fa-check"></i> Materi Bahasa Inggris</li>
+                    <li><i class="fas fa-check"></i> Latihan dan pembahasan</li>
+                    <li><i class="fas fa-check"></i> Pengembangan kemampuan</li>
+                </ul>
+                <a href="matematika.html" class="btn btn-primary">Detail Matematika</a>
+                <a href="inggris.html" class="package-contact">Detail Bahasa Inggris <i class="fas fa-arrow-right"></i></a>
+                <a href="#" data-wa class="package-contact">Tanya Biaya <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-        <p><strong>Informasi biaya:</strong> Hubungi SmartQ untuk mengetahui biaya dan jadwal.</p>
+            <article class="package-card">
+                <div class="package-icon purple-icon"><i class="fas fa-language"></i></div>
+                <span class="package-label">SINGLE PROGRAM</span>
+                <h3>English Explorer</h3>
+                <p>Mengembangkan keterampilan berbahasa Inggris dengan lebih percaya diri.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Vocabulary</li>
+                    <li><i class="fas fa-check"></i> Grammar</li>
+                    <li><i class="fas fa-check"></i> Reading & Writing</li>
+                    <li><i class="fas fa-check"></i> Speaking practice</li>
+                </ul>
+                <a href="inggris.html" class="btn btn-outline-dark">Detail Materi <i class="fas fa-arrow-right"></i></a>
+                <a href="#" data-wa class="package-contact">Tanya Biaya <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-        <a href="index.html#pendaftaran" class="primary-button">
-            Pilih Math Starter ↗
-        </a>
-    </article>
+            <article class="package-card">
+                <div class="package-icon blue-icon"><i class="fas fa-book-open"></i></div>
+                <span class="package-label">EARLY LEARNING</span>
+                <h3>ACM Starter</h3>
+                <p>Pembelajaran dasar membaca, menulis, dan berhitung untuk anak.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Pengenalan huruf</li>
+                    <li><i class="fas fa-check"></i> Latihan membaca</li>
+                    <li><i class="fas fa-check"></i> Latihan menulis</li>
+                    <li><i class="fas fa-check"></i> Dasar numerasi</li>
+                </ul>
+                <a href="acm.html" class="btn btn-outline-dark">Detail Materi <i class="fas fa-arrow-right"></i></a>
+                <a href="#" data-wa class="package-contact">Tanya Biaya <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-    <article class="detail-card" id="duo">
-        <span class="eyebrow">PACKAGE 02 · FAVORITE</span>
-        <h2>Smart Duo</h2>
+        </div>
 
-        <p>
-            Smart Duo adalah pilihan paket kombinasi
-            Matematika dan Bahasa Inggris. Paket ini
-            ditujukan bagi siswa yang ingin mengembangkan
-            dua kemampuan akademik sekaligus.
-        </p>
-
-        <ul>
-            <li>Bimbingan Matematika.</li>
-            <li>Bimbingan Bahasa Inggris.</li>
-            <li>Latihan soal dan pendalaman materi.</li>
-            <li>Pengembangan kemampuan akademik.</li>
-        </ul>
-
-        <p><strong>Informasi biaya:</strong> Hubungi SmartQ untuk mengetahui biaya dan jadwal.</p>
-
-        <a href="index.html#pendaftaran" class="primary-button">
-            Pilih Smart Duo ↗
-        </a>
-    </article>
-
-    <article class="detail-card" id="acm">
-        <span class="eyebrow">PACKAGE 03</span>
-        <h2>ACM Explorer</h2>
-
-        <p>
-            ACM Explorer merupakan paket pembelajaran
-            membaca dan menulis dengan Metode ACM
-            (Aku Cepat Membaca), untuk membantu
-            perkembangan kemampuan dasar anak.
-        </p>
-
-        <ul>
-            <li>Pengenalan huruf dan bunyi.</li>
-            <li>Latihan membaca secara bertahap.</li>
-            <li>Latihan menulis.</li>
-            <li>Pengembangan literasi dan numerasi.</li>
-        </ul>
-
-        <p><strong>Informasi biaya:</strong> Hubungi SmartQ untuk mengetahui biaya dan jadwal.</p>
-
-        <a href="index.html#pendaftaran" class="primary-button">
-            Pilih ACM Explorer ↗
-        </a>
-    </article>
-
-    <div class="center-button">
-        <a href="index.html" class="secondary-button">
-            ← Kembali ke Beranda
-        </a>
+        <div class="package-note">
+            <i class="fas fa-info-circle"></i>
+            Informasi biaya, jadwal, dan ketentuan paket dapat ditanyakan langsung kepada SmartQ melalui WhatsApp.
+        </div>
     </div>
-
-</main>
+</section>
 
 <footer class="footer">
-    <a href="index.html" class="brand footer-brand">
-        <img src="New SmartQ.jpeg" alt="Logo SmartQ">
-        <span>SMART<span>Q</span></span>
-    </a>
-    <p>LEARN · PRACTICE · GROW</p>
-    <p>© 2026 SmartQ. All Rights Reserved.</p>
+    <div class="container footer-bottom">
+        <p>© 2026 SmartQ. All Rights Reserved.</p>
+        <a href="#" data-wa>Hubungi WhatsApp</a>
+    </div>
 </footer>
 
+<a href="#" data-wa class="floating-wa"><i class="fab fa-whatsapp"></i></a>
 <script src="script.js"></script>
 </body>
 </html>

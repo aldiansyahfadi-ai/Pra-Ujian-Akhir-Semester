@@ -1,142 +1,219 @@
-/* =====================================
+/* =========================================
    SMARTQ JAVASCRIPT
-===================================== */
+   INTERACTIVE WEBSITE
+========================================= */
 
-/* MENU NAVIGASI */
+/* =========================================
+   1. NOMOR WHATSAPP SMARTQ
+========================================= */
+
+// GANTI NOMOR DI BAWAH INI DENGAN NOMOR
+// WHATSAPP ADMIN SMARTQ YANG SEBENARNYA.
+//
+// Format: 62 + nomor HP tanpa angka 0 di depan.
+// Contoh: 081234567890 menjadi 6281234567890.
+
+const WHATSAPP_NUMBER = "6287879990326";
+
+function openWhatsApp(message = "Halo SmartQ, saya ingin mengetahui informasi bimbingan belajar.") {
+    const number = WHATSAPP_NUMBER.replace(/\D/g, "");
+
+    if (number.length < 10 || number === "6281234567890") {
+        alert("Silakan ganti nomor WhatsApp contoh di file script.js dengan nomor WhatsApp SmartQ yang sebenarnya.");
+        return;
+    }
+
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+/* =========================================
+   2. SEMUA TOMBOL WHATSAPP
+========================================= */
+
+document.querySelectorAll("[data-wa]").forEach(button => {
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        openWhatsApp();
+    });
+});
+
+/* =========================================
+   3. MOBILE NAVIGATION
+========================================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", function () {
+
+    menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("show");
+
+        const icon = menuToggle.querySelector("i");
+
+        if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-times");
+        }
     });
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
             navLinks.classList.remove("show");
+
+            const icon = menuToggle.querySelector("i");
+
+            if (icon) {
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-times");
+            }
         });
     });
 }
 
+/* =========================================
+   4. TESTIMONI SLIDER
+========================================= */
 
-/* TESTIMONI */
+const slides = document.querySelectorAll(".testimonial-slide");
+const nextButton = document.getElementById("nextSlide");
+const prevButton = document.getElementById("prevSlide");
+const counter = document.getElementById("slideCounter");
 
-const testimonials = [
-    {
-        text: "Belajar di SmartQ menjadi pengalaman yang menyenangkan. Materi dijelaskan dengan cara yang mudah dipahami dan membantu saya lebih percaya diri dalam belajar.",
-        name: "Muhammad Fadi Aldiansyah",
-        role: "Peserta Bimbingan"
-    },
-    {
-        text: "Pembelajaran yang terarah dapat membantu siswa memahami materi dengan lebih baik. Suasana belajar yang nyaman juga membuat kegiatan belajar lebih menyenangkan.",
-        name: "Latisha Nur Fazwa",
-        role: "Peserta Bimbingan"
-    },
-    {
-        text: "Pendampingan belajar yang baik membantu anak membangun kebiasaan belajar dan mengembangkan kemampuan akademiknya secara bertahap.",
-        name: "Ummi Anifah",
-        role: "Mentor/Pengajar"
+let currentSlide = 0;
+
+function showSlide(index) {
+
+    if (slides.length === 0) return;
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+
+    if (counter) {
+        const current = String(index + 1).padStart(2, "0");
+        const total = String(slides.length).padStart(2, "0");
+
+        counter.textContent = `${current} / ${total}`;
     }
-];
-
-let currentTestimonial = 0;
-
-const testimonialText = document.getElementById("testimonialText");
-const testimonialName = document.getElementById("testimonialName");
-const testimonialRole = document.getElementById("testimonialRole");
-const testimonialNumber = document.getElementById("testimonialNumber");
-
-function showTestimonial(index) {
-
-    if (!testimonialText) return;
-
-    currentTestimonial = (index + testimonials.length) % testimonials.length;
-
-    const item = testimonials[currentTestimonial];
-
-    testimonialText.textContent = item.text;
-    testimonialName.textContent = item.name;
-    testimonialRole.textContent = item.role;
-
-    testimonialNumber.textContent =
-        "0" + (currentTestimonial + 1) + " / 0" + testimonials.length;
 }
 
-const nextButton = document.getElementById("nextTestimonial");
-const prevButton = document.getElementById("prevTestimonial");
+if (nextButton && prevButton && slides.length > 0) {
 
-if (nextButton) {
-    nextButton.addEventListener("click", function () {
-        showTestimonial(currentTestimonial + 1);
+    nextButton.addEventListener("click", () => {
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
     });
-}
 
-if (prevButton) {
-    prevButton.addEventListener("click", function () {
-        showTestimonial(currentTestimonial - 1);
+    prevButton.addEventListener("click", () => {
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
     });
+
+    showSlide(currentSlide);
 }
 
-
-/* FORM PENDAFTARAN WHATSAPP */
+/* =========================================
+   5. FORM PENDAFTARAN KE WHATSAPP
+========================================= */
 
 const registrationForm = document.getElementById("registrationForm");
 
-// GANTI DENGAN NOMOR WHATSAPP RESMI SMARTQ
-// Format: 62 + nomor HP tanpa angka 0 di depan
-const whatsappNumber = "6287879990326";
-
 if (registrationForm) {
 
-    registrationForm.addEventListener("submit", function (event) {
+    registrationForm.addEventListener("submit", function(event) {
 
         event.preventDefault();
 
-        const studentName =
-            document.getElementById("studentName").value.trim();
+        const nama = document.getElementById("nama").value.trim();
+        const orangtua = document.getElementById("orangtua").value.trim();
+        const nomor = document.getElementById("nomor").value.trim();
+        const usia = document.getElementById("usia").value.trim();
+        const program = document.getElementById("program").value;
+        const pesan = document.getElementById("pesan").value.trim();
 
-        const parentName =
-            document.getElementById("parentName").value.trim();
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-        const program =
-            document.getElementById("programChoice").value;
-
-        const message =
-            document.getElementById("message").value.trim();
-
-        if (!studentName || !parentName || !phone || !program) {
+        if (!nama || !orangtua || !nomor || !usia || !program) {
             alert("Mohon lengkapi semua data pendaftaran!");
             return;
         }
 
-        const whatsappMessage =
-`Halo SmartQ! Saya ingin mendaftarkan siswa.
+        const phoneDigits = nomor.replace(/\D/g, "");
 
-Nama Siswa: ${studentName}
-Nama Orang Tua: ${parentName}
-Nomor WhatsApp: ${phone}
-Program yang Diminati: ${program}
+        if (phoneDigits.length < 9 || phoneDigits.length > 15) {
+            alert("Mohon masukkan nomor WhatsApp yang valid.");
+            return;
+        }
+
+        const message =
+`HALO SMARTQ! 👋
+Saya ingin mendaftarkan peserta bimbingan belajar.
+
+📚 PENDAFTARAN SMARTQ
+
+Nama Siswa: ${nama}
+Nama Orang Tua/Wali: ${orangtua}
+Nomor WhatsApp: ${nomor}
+Usia/Kelas: ${usia}
+Program Pilihan: ${program}
 
 Pesan Tambahan:
-${message || "-"}
+${pesan || "-"}
 
-Mohon informasi lebih lanjut mengenai jadwal dan pendaftaran.
+Mohon informasi lebih lanjut mengenai pendaftaran, jadwal, dan biaya belajar.
 
 Terima kasih.
-`;
+SmartQ - Learn, Practice, Grow.`;
 
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(whatsappMessage);
+        openWhatsApp(message);
+    });
+}
 
-        window.open(whatsappURL, "_blank");
+/* =========================================
+   6. ANIMASI SCROLL
+========================================= */
 
+const animatedElements = document.querySelectorAll(
+    ".program-card, .team-card, .advantage-item, .package-card, .material-item"
+);
+
+if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver((entries, obs) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                obs.unobserve(entry.target);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
     });
 
+    animatedElements.forEach(element => {
+        element.style.opacity = "0";
+        element.style.transform = "translateY(20px)";
+        element.style.transition = "opacity .6s ease, transform .6s ease";
+
+        observer.observe(element);
+    });
 }
+
+console.log("SmartQ Website berhasil dijalankan!");

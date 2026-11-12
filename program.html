@@ -5,130 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Belajar | SmartQ</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-<header class="navbar">
-    <a href="index.html" class="brand">
-        <img src="New SmartQ.jpeg" alt="Logo SmartQ">
-        <span>SMART<span>Q</span></span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav id="navLinks">
-        <a href="index.html">Beranda</a>
-        <a href="index.html#tentang">Tentang Kami</a>
-        <a href="program.html" class="active">Program</a>
-        <a href="paket.html">Paket</a>
-        <a href="index.html#tim">Tim Kami</a>
-        <a href="index.html#testimoni">Testimoni</a>
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="brand">
+            <img src="New SmartQ.jpeg" alt="SmartQ">
+            <span>Smart<span>Q</span><small>Let's Learn And Grow Together
+            </small></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#tentang">Tentang</a>
+            <a href="program.html" class="active">Program</a>
+            <a href="paket.html">Paket</a>
+            <a href="index.html#tim">Tim Kami</a>
+            <a href="index.html#kontak">Kontak</a>
+            <a href="#" class="nav-wa" data-wa><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+        </div>
     </nav>
-
-    <a href="index.html#pendaftaran" class="nav-button">Daftar Sekarang ↗</a>
 </header>
 
-<section class="detail-hero">
-    <span class="eyebrow">SMARTQ LEARNING PROGRAM</span>
-    <h1>Explore Our <span>Programs.</span></h1>
-    <p>
-        Temukan program pembelajaran yang dirancang
-        untuk membantu siswa mengembangkan kemampuan
-        akademik, keterampilan, dan rasa percaya diri.
-    </p>
+<section class="page-hero">
+    <div class="container">
+        <span class="eyebrow light">SMARTQ LEARNING PROGRAMS</span>
+        <h1>Temukan Program <span>Terbaikmu.</span></h1>
+        <p>Belajar lebih terarah, kembangkan kemampuan, dan raih prestasi bersama SmartQ.</p>
+        <div class="breadcrumb"><a href="index.html">Beranda</a> / Program</div>
+    </div>
 </section>
 
-<main class="detail-content">
+<section class="section">
+    <div class="container">
+        <div class="center-heading">
+            <span class="eyebrow">OUR PROGRAMS</span>
+            <h2>Program Unggulan <span>SmartQ</span></h2>
+            <p>Pilih bidang pembelajaran yang sesuai dengan kebutuhanmu.</p>
+        </div>
 
-    <article class="detail-card" id="matematika">
-        <span class="eyebrow">PROGRAM 01</span>
-        <h2>Bimbingan Matematika</h2>
+        <div class="program-grid detail-grid">
 
-        <p>
-            Program bimbingan Matematika SmartQ membantu siswa
-            memahami konsep Matematika secara bertahap.
-            Pembelajaran berfokus pada pemahaman materi,
-            kemampuan berhitung, dan latihan penyelesaian soal.
-        </p>
+            <article class="program-card pink-card">
+                <div class="program-icon"><i class="fas fa-calculator"></i></div>
+                <span class="card-label">PROGRAM 01</span>
+                <h3>Matematika</h3>
+                <p>Mengasah kemampuan berhitung, pemahaman konsep, logika, dan pemecahan masalah.</p>
+                <ul class="mini-list">
+                    <li>Operasi hitung dasar</li>
+                    <li>Pecahan dan desimal</li>
+                    <li>Geometri dan pengukuran</li>
+                </ul>
+                <a href="matematika.html">Lihat Detail Materi <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-        <ul>
-            <li>Pemahaman konsep dasar Matematika.</li>
-            <li>Latihan soal dan pembahasan.</li>
-            <li>Pendalaman materi sesuai pelajaran sekolah.</li>
-            <li>Pengembangan kemampuan berpikir logis.</li>
-            <li>Evaluasi perkembangan belajar.</li>
-        </ul>
+            <article class="program-card blue-card">
+                <div class="program-icon"><i class="fas fa-globe"></i></div>
+                <span class="card-label">PROGRAM 02</span>
+                <h3>Bahasa Inggris</h3>
+                <p>Meningkatkan keterampilan berbahasa Inggris melalui latihan yang bertahap.</p>
+                <ul class="mini-list">
+                    <li>Vocabulary</li>
+                    <li>Grammar</li>
+                    <li>Reading dan speaking</li>
+                </ul>
+                <a href="inggris.html">Lihat Detail Materi <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-        <a href="index.html#pendaftaran" class="primary-button">
-            Daftar Matematika ↗
-        </a>
-    </article>
+            <article class="program-card purple-card">
+                <div class="program-icon"><i class="fas fa-book-open"></i></div>
+                <span class="card-label">PROGRAM 03</span>
+                <h3>Calistung Metode ACM</h3>
+                <p>Mengenalkan kemampuan membaca, menulis, dan berhitung melalui pembelajaran bertahap.</p>
+                <ul class="mini-list">
+                    <li>Mengenal huruf dan kata</li>
+                    <li>Latihan membaca dan menulis</li>
+                    <li>Literasi dan numerasi</li>
+                </ul>
+                <a href="acm.html">Lihat Detail Materi <i class="fas fa-arrow-right"></i></a>
+            </article>
 
-    <article class="detail-card" id="inggris">
-        <span class="eyebrow">PROGRAM 02</span>
-        <h2>Bimbingan Bahasa Inggris</h2>
-
-        <p>
-            Program Bahasa Inggris dirancang untuk membantu
-            siswa mengenal dan menggunakan Bahasa Inggris
-            melalui latihan yang terarah dan menyenangkan.
-        </p>
-
-        <ul>
-            <li>Vocabulary atau penguasaan kosakata.</li>
-            <li>Grammar atau tata bahasa.</li>
-            <li>Reading dan pemahaman bacaan.</li>
-            <li>Writing atau latihan menulis.</li>
-            <li>Speaking practice atau latihan berbicara.</li>
-        </ul>
-
-        <a href="index.html#pendaftaran" class="primary-button">
-            Daftar Bahasa Inggris ↗
-        </a>
-    </article>
-
-    <article class="detail-card" id="calistung">
-        <span class="eyebrow">PROGRAM 03</span>
-        <h2>Calistung Metode ACM</h2>
-
-        <p>
-            ACM merupakan singkatan dari Aku Cepat Membaca.
-            Program ini ditujukan untuk membantu anak
-            mengembangkan kemampuan membaca dan menulis
-            melalui pembelajaran bertahap.
-        </p>
-
-        <ul>
-            <li>Pengenalan huruf dan bunyi.</li>
-            <li>Pendampingan membaca dan menulis.</li>
-            <li>Pembelajaran melalui enam kata kunci lembaga.</li>
-            <li>Membiasakan budaya literasi.</li>
-            <li>Mengembangkan kemampuan numerasi.</li>
-        </ul>
-
-        <a href="index.html#pendaftaran" class="primary-button">
-            Daftar Calistung ACM ↗
-        </a>
-    </article>
-
-    <div class="center-button">
-        <a href="index.html" class="secondary-button">
-            ← Kembali ke Beranda
-        </a>
+        </div>
     </div>
+</section>
 
-</main>
+<section class="section advantage-section">
+    <div class="container center-heading">
+        <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+        <h2>Mulai Langkahmu Bersama <span>SmartQ</span></h2>
+        <p>Sudah menemukan program yang cocok? Daftarkan dirimu sekarang.</p>
+        <a href="index.html#kontak" class="btn btn-pink">Daftar Sekarang <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
 
 <footer class="footer">
-    <a href="index.html" class="brand footer-brand">
-        <img src="New SmartQ.jpeg" alt="Logo SmartQ">
-        <span>SMART<span>Q</span></span>
-    </a>
-    <p>LEARN · PRACTICE · GROW</p>
-    <p>© 2026 SmartQ. All Rights Reserved.</p>
+    <div class="container footer-bottom">
+        <p>© 2026 SmartQ. All Rights Reserved.</p>
+        <a href="#" data-wa>Hubungi WhatsApp</a>
+    </div>
 </footer>
 
+<a href="#" data-wa class="floating-wa"><i class="fab fa-whatsapp"></i></a>
 <script src="script.js"></script>
 </body>
 </html>
