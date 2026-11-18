@@ -678,7 +678,7 @@ p {
 }
 
 .advantage-item:hover {
-    background: var(--navy);
+    background: var(--blue);
     color: white;
     transform: translateY(-5px);
 }
